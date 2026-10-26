@@ -64,9 +64,14 @@ export async function chatCompletion(
     return { text: "", model: "sample", via: "sample" };
   }
 
-  // Primary = Nightshift (hackathon rule). xAI only if Nightshift fails / AI_PREFER=xai.
-  const preferXai =
-    (process.env.AI_PREFER || "").toLowerCase() === "xai" && getXaiClient();
+  // Hackathon rule: Nightshift is primary. xAI only if AI_PREFER=xai or
+  // ALLOW_XAI_FALLBACK=true (off for demo recording).
+  const prefer =
+    (process.env.AI_PREFER || "nightshift").toLowerCase() === "xai"
+      ? "xai"
+      : "nightshift";
+  const allowXaiFallback =
+    (process.env.ALLOW_XAI_FALLBACK || "").toLowerCase() === "true";
 
   const tryXai = async () => {
     const xai = getXaiClient();
@@ -84,25 +89,45 @@ export async function chatCompletion(
       process.env.METERLESS_EXTRACT_MODEL ||
       process.env.METERLESS_MODEL ||
       "meterless/auto";
-    return completeWith(nightshift, model, messages, "nightshift");
+    // Nemotron occasionally returns empty_response — retry before giving up
+    let last: unknown;
+    for (let attempt = 0; attempt < 3; attempt++) {
+      try {
+        return await completeWith(nightshift, model, messages, "nightshift");
+      } catch (err) {
+        last = err;
+        const msg = err instanceof Error ? err.message : String(err);
+        if (!/empty_response|502|499|timeout|aborted/i.test(msg)) throw err;
+        await new Promise((r) => setTimeout(r, 800 * (attempt + 1)));
+      }
+    }
+    throw last instanceof Error
+      ? last
+      : new Error(`Nightshift failed after retries: ${String(last)}`);
   };
 
-  let lastErr: unknown;
-  const order = preferXai
-    ? [tryXai, tryNightshift]
-    : [tryNightshift, tryXai];
-
-  for (const fn of order) {
+  if (prefer === "xai") {
     try {
-      return await fn();
-    } catch (err) {
-      lastErr = err;
+      return await tryXai();
+    } catch {
+      return tryNightshift();
     }
   }
 
-  throw new Error(
-    lastErr instanceof Error
-      ? `AI extract failed after Nightshift/xAI: ${lastErr.message}`
-      : "AI extract failed (no LLM available)."
-  );
+  try {
+    return await tryNightshift();
+  } catch (nsErr) {
+    if (allowXaiFallback && getXaiClient()) {
+      try {
+        return await tryXai();
+      } catch (xErr) {
+        const a = nsErr instanceof Error ? nsErr.message : String(nsErr);
+        const b = xErr instanceof Error ? xErr.message : String(xErr);
+        throw new Error(`AI extract failed. Nightshift: ${a}. xAI: ${b}`);
+      }
+    }
+    throw nsErr instanceof Error
+      ? nsErr
+      : new Error(`Nightshift extract failed: ${String(nsErr)}`);
+  }
 }

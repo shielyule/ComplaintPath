@@ -513,7 +513,7 @@ function GateDetermination({
           Step 3 · Jurisdictional door
         </p>
         <h1 className="mt-2 flex flex-wrap items-center font-display text-[28px] font-medium text-ink md:text-[32px]">
-          Dummy&apos;s guide: did a door open?
+          Did a statutory door open?
           <InfoTip label="What this stage is">
             We apply fixed scheme rules (time limits, wrong doors). Result is
             one of four: Eligible, Premature, Out of Time, or Wrong Door. This
