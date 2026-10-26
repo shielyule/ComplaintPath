@@ -1,0 +1,74 @@
+[
+  {
+    "scenario": "FOS 6-month time-bar tripwire",
+    "input": {
+      "sector": "financial",
+      "firmStatus": "ACTIVE",
+      "complaintRaisedDate": "2025-10-01",
+      "hasFinalResponseLetter": true,
+      "finalResponseLetterDate": "2026-01-10",
+      "todayIso": "2026-09-22"
+    },
+    "expected": {
+      "targetScheme": "FOS",
+      "status": "TIME_BARRED"
+    }
+  },
+  {
+    "scenario": "FSCS insolvency detection",
+    "input": {
+      "sector": "financial",
+      "firmStatus": "IN_DEFAULT",
+      "complaintRaisedDate": "2026-08-01",
+      "hasFinalResponseLetter": false,
+      "todayIso": "2026-09-22"
+    },
+    "expected": {
+      "targetScheme": "FSCS_REDIRECT",
+      "status": "REDIRECT_REQUIRED"
+    }
+  },
+  {
+    "scenario": "ICO damages mismatch warning",
+    "input": {
+      "sector": "data_privacy",
+      "raisedWithDpoDate": "2026-08-01",
+      "hasDpoFinalResponse": true,
+      "seekingFinancialDamagesOnly": true,
+      "todayIso": "2026-09-22"
+    },
+    "expected": {
+      "targetScheme": "ICO",
+      "status": "ELIGIBLE"
+    }
+  },
+  {
+    "scenario": "POPLA 28-day window active",
+    "input": {
+      "sector": "parking",
+      "landType": "PRIVATE",
+      "privateTradeBody": "BPA",
+      "operatorRejectionDate": "2026-09-10",
+      "hasPoplaCode": true,
+      "todayIso": "2026-09-22"
+    },
+    "expected": {
+      "targetScheme": "POPLA",
+      "status": "ELIGIBLE"
+    }
+  },
+  {
+    "scenario": "Holding letter — no FRL, under 8 weeks",
+    "input": {
+      "sector": "financial",
+      "firmStatus": "ACTIVE",
+      "complaintRaisedDate": "2026-09-22",
+      "hasFinalResponseLetter": false,
+      "todayIso": "2026-10-22"
+    },
+    "expected": {
+      "targetScheme": null,
+      "status": "PREMATURE"
+    }
+  }
+]

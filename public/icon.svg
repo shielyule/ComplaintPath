@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="ComplaintPath">
+  <!-- Monogram: serif C · civic green path-dot · underscore -->
+  <text
+    x="6"
+    y="50"
+    font-family="Georgia, 'Times New Roman', Times, serif"
+    font-size="54"
+    font-weight="500"
+    fill="#111c24"
+  >C</text>
+  <circle cx="48" cy="34" r="9" fill="#174334" />
+  <rect x="37" y="50" width="22" height="4.5" rx="0.5" fill="#111c24" />
+</svg>

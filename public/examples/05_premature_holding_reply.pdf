@@ -1,0 +1,64 @@
+%PDF-1.4
+1 0 obj<< /Type /Catalog /Pages 2 0 R >>endobj
+2 0 obj<< /Type /Pages /Kids [3 0 R] /Count 1 >>endobj
+3 0 obj<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>endobj
+4 0 obj<< /Length 857 >>stream
+BT
+/F1 11 Tf
+14 TL
+50 800 Td
+(Example 5 - Premature holding reply \(not a Final Response\)) Tj
+T*
+( ) Tj
+T*
+(HALCYON INSURANCE PLC) Tj
+T*
+(Customer Care, PO Box 55, Bristol BS1 9XX) Tj
+T*
+(Date: 28 September 2026   Claim: HI-22091) Tj
+T*
+( ) Tj
+T*
+(Dear Mrs Chen,) Tj
+T*
+( ) Tj
+T*
+(ACKNOWLEDGEMENT OF COMPLAINT) Tj
+T*
+( ) Tj
+T*
+(Thank you for your letter of 22 September 2026 about the declined travel claim.) Tj
+T*
+( ) Tj
+T*
+(We are investigating and aim to respond fully within eight weeks. This letter is NOT our) Tj
+T*
+(Final Response. Please do not escalate to the Financial Ombudsman until we issue a Final) Tj
+T*
+(Response or eight weeks pass without one.) Tj
+T*
+( ) Tj
+T*
+(Yours sincerely, Customer Care) Tj
+T*
+( ) Tj
+T*
+(WHAT THIS IS: Early holding letter - ComplaintPath should usually find this PREMATURE) Tj
+T*
+(\(too early to escalate\).) Tj
+ET
+endstream
+endobj
+5 0 obj<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000056 00000 n 
+0000000111 00000 n 
+0000000235 00000 n 
+0000001141 00000 n 
+trailer<< /Size 6 /Root 1 0 R >>
+startxref
+1209
+%%EOF

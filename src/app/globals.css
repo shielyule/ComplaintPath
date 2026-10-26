@@ -3,19 +3,32 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #faf9f6;
+  --foreground: #1a1c1a;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #faf9f6;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 7px,
+      rgba(17, 28, 36, 0.03) 7px,
+      rgba(17, 28, 36, 0.03) 8px
+    );
+  min-height: 100vh;
+}
+
+::selection {
+  background: #beedd7;
+}
+
+.font-tabular {
+  font-variant-numeric: tabular-nums;
 }

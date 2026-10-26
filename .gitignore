@@ -33,6 +33,10 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# run traces (generated)
+/logs/*.jsonl
+!/logs/.gitkeep
+
 # vercel
 .vercel
 

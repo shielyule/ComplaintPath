@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ComplaintPath — Pitch Deck</title>
+  <style>
+    :root {
+      --ink: #111c24;
+      --green: #174334;
+      --cream: #faf9f6;
+      --muted: #5c6570;
+      --rule: #d9d4c8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+      background: #e8e4da;
+      color: var(--ink);
+    }
+    .toolbar {
+      position: sticky; top: 0; z-index: 10;
+      display: flex; gap: 12px; align-items: center; justify-content: space-between;
+      padding: 10px 20px; background: var(--ink); color: #fff;
+      font-size: 13px;
+    }
+    .toolbar a, .toolbar button {
+      color: #fff; background: transparent; border: 1px solid #fff4;
+      padding: 6px 12px; cursor: pointer; text-decoration: none; font: inherit;
+    }
+    .deck { max-width: 1100px; margin: 24px auto; padding: 0 16px 48px; }
+    .slide {
+      background: var(--cream);
+      min-height: 620px;
+      padding: 56px 64px;
+      margin-bottom: 28px;
+      border: 1px solid var(--rule);
+      page-break-after: always;
+      position: relative;
+      overflow: hidden;
+    }
+    .slide::before {
+      content: "";
+      position: absolute; inset: 0;
+      background-image: repeating-linear-gradient(
+        0deg, transparent, transparent 7px, rgba(17,28,36,0.03) 7px, rgba(17,28,36,0.03) 8px
+      );
+      pointer-events: none;
+    }
+    .slide > * { position: relative; }
+    .eyebrow {
+      font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--green); font-weight: 700; margin: 0 0 16px;
+    }
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500; font-size: 48px; line-height: 1.05; margin: 0 0 16px;
+    }
+    h1 .path { color: var(--green); }
+    h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500; font-size: 36px; margin: 0 0 20px; line-height: 1.15;
+    }
+    p, li { font-size: 18px; line-height: 1.55; color: var(--muted); }
+    p.lead { font-size: 22px; color: var(--ink); max-width: 38ch; }
+    ul { padding-left: 1.2em; margin: 0; }
+    li { margin-bottom: 10px; }
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 28px; }
+    .card {
+      border: 1px solid var(--rule); background: #fff; padding: 20px 22px;
+    }
+    .card h3 {
+      margin: 0 0 8px; font-size: 14px; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--green);
+    }
+    .card p { margin: 0; font-size: 16px; }
+    .tag {
+      display: inline-block; border: 1px solid var(--green);
+      color: var(--green); padding: 4px 10px; font-size: 11px;
+      letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700;
+      margin-bottom: 18px;
+    }
+    .arch {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 28px;
+    }
+    .arch div {
+      border: 1px solid var(--ink); padding: 16px 14px; background: #fff; min-height: 110px;
+    }
+    .arch strong { display: block; font-size: 13px; letter-spacing: 0.06em;
+      text-transform: uppercase; margin-bottom: 8px; color: var(--ink); }
+    .arch span { font-size: 14px; color: var(--muted); line-height: 1.4; }
+    .footer-mark {
+      position: absolute; bottom: 28px; right: 40px;
+      font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
+    }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td {
+      text-align: left; padding: 12px 10px; border-bottom: 1px solid var(--rule);
+      font-size: 16px; vertical-align: top;
+    }
+    th { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); }
+    @media print {
+      body { background: #fff; }
+      .toolbar { display: none; }
+      .deck { max-width: none; margin: 0; padding: 0; }
+      .slide { margin: 0; border: none; min-height: 100vh; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <span>ComplaintPath · Open Agent Hackathon 2026 · Track 01</span>
+    <span>
+      <button onclick="window.print()">Print / Save PDF</button>
+      <a href="/">Open app</a>
+    </span>
+  </div>
+
+  <div class="deck">
+
+    <!-- 1 -->
+    <section class="slide">
+      <p class="tag">GenAI Works · Open Agent Hackathon 2026</p>
+      <h1>Complaint<span class="path">Path</span></h1>
+      <p class="lead">Paste a UK rejection letter. Hard gates in code. Correct statutory door — or an honest block. Human-approved pack. Never auto-filed.</p>
+      <div class="grid2" style="margin-top:48px">
+        <div class="card">
+          <h3>Track</h3>
+          <p>01 · Solving Fragmented Intelligence</p>
+        </div>
+        <div class="card">
+          <h3>Sponsors in product</h3>
+          <p>Zetaris · Meterless World Model · Nightshift (Nemotron) · Bright Data · Cursor</p>
+        </div>
+      </div>
+      <p class="footer-mark">Not legal advice</p>
+    </section>
+
+    <!-- 2 -->
+    <section class="slide">
+      <p class="eyebrow">Problem</p>
+      <h2>UK redress is fragmented. Citizens pay for that.</h2>
+      <ul>
+        <li>After a Final Response, deadlock, or DPO reply, people guess the door: FOS, Energy Ombudsman, ICO, parking ADR, FSCS.</li>
+        <li>Wrong door or filing too early/late burns the limitation clock and months of effort.</li>
+        <li>Chatbots that invent dates or soft-pedal blockers make it worse.</li>
+      </ul>
+      <div class="card" style="margin-top:36px">
+        <h3>Design principle</h3>
+        <p>Deterministic gates decide Eligible / Premature / Out of Time / Wrong Door. AI extracts facts — it does not invent clocks.</p>
+      </div>
+      <p class="footer-mark">Slide 2 / 7</p>
+    </section>
+
+    <!-- 3 -->
+    <section class="slide">
+      <p class="eyebrow">Users</p>
+      <h2>Who this is for</h2>
+      <div class="grid2">
+        <div class="card">
+          <h3>Primary</h3>
+          <p>Unrepresented UK consumers with a firm’s written reply — Final Response, energy deadlock, DPO final position, or parking rejection.</p>
+        </div>
+        <div class="card">
+          <h3>Not for</h3>
+          <p>Claims management companies, solicitors running volume intake, or anyone expecting auto-submit to a scheme portal.</p>
+        </div>
+      </div>
+      <ul style="margin-top:28px">
+        <li>Citizen stays in control: approve pack sections I–IV, then file on the official portal themselves.</li>
+        <li>Plain-English stories + ⓘ tips — “Dummy’s guide” gate, not legalese first.</li>
+      </ul>
+      <p class="footer-mark">Slide 3 / 7</p>
+    </section>
+
+    <!-- 4 -->
+    <section class="slide">
+      <p class="eyebrow">Solution</p>
+      <h2>One path: letter → extract → gate → pack</h2>
+      <div class="arch">
+        <div><strong>1 Intake</strong><span>Paste / PDF / image. As-of date for clocks.</span></div>
+        <div><strong>2 Extract</strong><span>Nightshift (Nemotron) reads firm, letter type, dates.</span></div>
+        <div><strong>3 Gate</strong><span>Code-only: Eligible, Premature, Out of Time, Wrong Door.</span></div>
+        <div><strong>4 Pack</strong><span>Human approves I–IV → .md + .pdf → file on portal.</span></div>
+      </div>
+      <ul style="margin-top:32px">
+        <li>Verified · Missing · Blocker on every fact — missing clock dates block continue.</li>
+        <li>ICO Special only when routed to ICO; skipped for FOS / Energy.</li>
+        <li>Export locked until every section is approved.</li>
+      </ul>
+      <p class="footer-mark">Slide 4 / 7</p>
+    </section>
+
+    <!-- 5 -->
+    <section class="slide">
+      <p class="eyebrow">Architecture</p>
+      <h2>Multi-agent pipeline + World Model</h2>
+      <table>
+        <thead>
+          <tr><th>Agent</th><th>Does</th><th>Sponsor</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>DataRetriever</td><td>Scheme clocks &amp; portals</td><td>Zetaris</td></tr>
+          <tr><td>Extractor</td><td>Letter → structured tokens</td><td>Nightshift / Nemotron</td></tr>
+          <tr><td>Gate + Evidence</td><td>Hard route; refuse invented dates</td><td>In-code</td></tr>
+          <tr><td>WebRetriever</td><td>Live scheme portal excerpt</td><td>Bright Data</td></tr>
+          <tr><td>PackWriter + Human</td><td>Draft I–IV; approve before export</td><td>World Model + HITL</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:24px">Shared run state: <strong style="color:var(--ink)">Meterless World Model</strong> (entities, observations, provenance) · JSONL traces under <code>logs/</code>.</p>
+      <p class="footer-mark">Slide 5 / 7</p>
+    </section>
+
+    <!-- 6 -->
+    <section class="slide">
+      <p class="eyebrow">Sponsor technology</p>
+      <h2>How each sponsor shows up</h2>
+      <table>
+        <thead><tr><th>Sponsor</th><th>Working feature</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Zetaris</strong></td><td>Data layer — <code>complaintpath.scheme_rules</code> via SQL REST; UI shows “Scheme data: Zetaris live”.</td></tr>
+          <tr><td><strong>Meterless World Model</strong></td><td>Per-run entities + observations; pack &amp; traces share provenance.</td></tr>
+          <tr><td><strong>Meterless Nightshift</strong></td><td>Primary AI provider — letter extract + pack polish on local Runtime (Nemotron Lightning).</td></tr>
+          <tr><td><strong>NVIDIA</strong></td><td>Nemotron model served through Nightshift lanes.</td></tr>
+          <tr><td><strong>Bright Data</strong></td><td>Web Unlocker → live portal text into pack §IV.</td></tr>
+          <tr><td><strong>Cursor</strong> (optional)</td><td>Build environment for agents, UI, adapters.</td></tr>
+        </tbody>
+      </table>
+      <p class="footer-mark">Slide 6 / 7</p>
+    </section>
+
+    <!-- 7 -->
+    <section class="slide">
+      <p class="eyebrow">Demo &amp; ask</p>
+      <h2>What judges will see</h2>
+      <ul>
+        <li>Sample Final Response → Analyse → Extract via <strong style="color:var(--ink)">Nightshift AI (Nemotron)</strong></li>
+        <li>Scheme data via <strong style="color:var(--ink)">Zetaris</strong> (or labelled sample if offline)</li>
+        <li>Gate <strong style="color:var(--ink)">Eligible → FOS</strong> → approve pack → download .md + .pdf</li>
+        <li>Next steps: citizen logs on to the official portal and files using the Gate Pack</li>
+      </ul>
+      <div class="card" style="margin-top:36px">
+        <h3>Run</h3>
+        <p><code>cd app && npm install && npm run dev</code> → http://localhost:3001 · README + SUBMISSION.md in repo</p>
+      </div>
+      <p style="margin-top:40px;color:var(--ink);font-size:20px">Complaint<span style="color:var(--green)">Path</span> — fragmented redress, routed with hard gates.</p>
+      <p class="footer-mark">Slide 7 / 7 · Thank you</p>
+    </section>
+
+  </div>
+</body>
+</html>

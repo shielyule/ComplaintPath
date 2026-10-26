@@ -1,0 +1,44 @@
+[
+  {
+    "scheme_id": "FOS",
+    "name": "Financial Ombudsman Service",
+    "sector": "financial",
+    "letter_window_months": 6,
+    "wait_days_without_frl": 56,
+    "payment_services_wait_days": 15,
+    "portal_url": "https://complaintsubmission.financial-ombudsman.org.uk/",
+    "notes": "FRL within 6 months OR 8+ weeks with no response. FSCS is not an escalation of a living firm."
+  },
+  {
+    "scheme_id": "ENERGY_OMBUDSMAN",
+    "name": "Energy Ombudsman",
+    "sector": "energy",
+    "letter_window_months": 12,
+    "wait_days_without_frl": 56,
+    "portal_url": "https://www.energyombudsman.org/submit-a-complaint",
+    "notes": "Deadlock letter within 12 months OR 8 weeks unresolved."
+  },
+  {
+    "scheme_id": "ICO",
+    "name": "Information Commissioner's Office",
+    "sector": "data_privacy",
+    "dpo_wait_days": 30,
+    "portal_url": "https://ico.org.uk/make-a-complaint/",
+    "notes": "ICO does not award damages. Pair with GDPR Art. 82 letter-before-claim if seeking compensation."
+  },
+  {
+    "scheme_id": "FSCS_REDIRECT",
+    "name": "Financial Services Compensation Scheme",
+    "sector": "financial",
+    "portal_url": "https://app.fscs.org.uk/",
+    "notes": "Only if firm in default / ceased trading. Otherwise route to FOS."
+  },
+  {
+    "scheme_id": "POPLA",
+    "name": "POPLA",
+    "sector": "parking",
+    "appeal_days": 28,
+    "portal_url": "https://www.popla.co.uk/",
+    "notes": "Private BPA operator appeals."
+  }
+]
