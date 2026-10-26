@@ -1,0 +1,25 @@
+{
+  "query": "select * from values (...) as scheme_rules(...)",
+  "ran_via": "Zetaris UI proxy /api/proxy/query/sql/start",
+  "checked": "2026-10-26",
+  "records": [
+    {
+      "scheme_id": "FOS",
+      "name": "Financial Ombudsman Service",
+      "sector": "financial",
+      "letter_window_months": "6",
+      "wait_days_without_frl": "56",
+      "portal_url": "https://complaintsubmission.financial-ombudsman.org.uk/",
+      "notes": "FRL within 6 months OR 8+ weeks with no response"
+    },
+    {
+      "scheme_id": "ENERGY_OMBUDSMAN",
+      "name": "Energy Ombudsman",
+      "sector": "energy",
+      "letter_window_months": "12",
+      "wait_days_without_frl": "56",
+      "portal_url": "https://www.energyombudsman.org/submit-a-complaint",
+      "notes": "Deadlock within 12 months OR 8 weeks unresolved"
+    }
+  ]
+}
